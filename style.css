@@ -1,3 +1,4 @@
+
 body, html {
     height: 100%;
     margin: 0;
@@ -15,42 +16,54 @@ h1 {
 h2 {
   font-family: 'Shadows Into Light', cursive;
   font-size: 400%;
+  text-align: center;
+  margin: 0;
 }
 
 a {
     cursor: pointer;
     text-decoration: none;
 }
-
-#hi {
-  color: #333333;
-  float: left;
-  max-width: 40%;
-  margin-left: 15%;
+a:link {
+  color: dodgerblue;
 }
 
-#aboutText {
+
+
+/* Experience section */
+.leftcol {
   float: left;
-  margin-top: -5%;
-  margin-left: -10%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.rightcol {
+  float: right;
+  width: 40%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+/* About section */
+#hi {
+  color: #333333;
+  position: absolute;
+  float: left;
+  width: 40%;
+  margin-left: 10%;
+  top: 50%;
+  transform: translate(0, -60%);
 }
 
 #profilePic {
   border-radius: 50%;
-  width: 25%;
   float: right;
+  width: 30%;
   margin-right: 10%;
-  margin-top: 7%;
-  margin-bottom: 7%;
 }
 
-#name {
-  font-size: 300%;
-  position: absolute;
-  top: 40%;
-  margin-left: 10%;
-  animation: fadeInShrink 2s ease-in 0.5s both;
-}
+
 
 
 /* Section formatting */
@@ -63,20 +76,30 @@ a {
 .sectionHead {
   vertical-align: top;
   display:inline-block;
-  width: 100%
+  width: 100%;
 }
 .section {
   background-image: url("images/stucco.jpg");
+  padding-top: 7%;
+  padding-bottom: 7%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flow-root;
+  position: relative;
+  /* float: left; <-- THIS BREAKS PARALLAX SCROLLING, USE OVERFLOW:HIDDEN TRICK*/
+  overflow: hidden;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 
+/* Page one styling */
+#name {
+  font-size: 300%;
+  position: absolute;
+  top: 40%;
+  margin-left: 10%;
+  animation: fadeInShrink 2s ease-in 0.5s both;
+}
 /* Top bar navigation menu */
 #topbar{
   background-color: lightgrey;
@@ -117,6 +140,7 @@ a {
 #page3 {
   background-image: url('images/plant4.jpg');
 }
+
 
 /* Animation */
 @keyframes fadeInShrink {
