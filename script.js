@@ -1,10 +1,9 @@
 var height = 0;
-window.onload = function(){
+window.onload = function () {
   height = -document.getElementById("topbar").offsetHeight;
-  console.log(height);
 }
 
-window.smoothScroll = function(target) {
+window.smoothScroll = function (target) {
     var scrollContainer = target;
     do { //find scroll container
         scrollContainer = scrollContainer.parentNode;
@@ -18,7 +17,7 @@ window.smoothScroll = function(target) {
         targetY += target.offsetTop;
     } while (target = target.offsetParent);
 
-    scroll = function(c, a, b, i) {
+    scroll = function (c, a, b, i) {
         i++; if (i > 30) return;
         c.scrollTop = a + (b - a) / 30 * i;
         setTimeout(function(){ scroll(c, a, b, i); }, 20);
