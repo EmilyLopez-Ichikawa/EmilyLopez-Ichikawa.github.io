@@ -1,4 +1,3 @@
-
 body, html {
     height: 100%;
     margin: 0;
@@ -44,8 +43,7 @@ a:link {
 #abouttxt {
   color: #333333;
   position: absolute;
-  /* float: left; */
-  overflow: hidden;
+  float: left;
   width: 40%;
   margin-left: 10%;
   top: 50%;
@@ -102,6 +100,22 @@ a:link {
   margin-left: 10%;
   animation: fadeInShrink 2s ease-in 0.5s both;
 }
+#arrow {
+  animation: fadeIn 1.5s ease-in 1s both, growShrink 1.5s ease-in-out 2s infinite alternate;
+}
+#downbox{
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+#downbox:hover {
+  background-color: lightgrey;
+}
 /* Top bar navigation menu */
 #topbar{
   background-color: lightgrey;
@@ -131,10 +145,13 @@ a:link {
     background-size: cover;
     margin: 0;
     padding: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
 }
 #page1 {
   background-image: url('images/plant.jpg');
-  z-index: 1;
 }
 #page2 {
   background-image: url('images/plant2.jpg');
@@ -144,9 +161,6 @@ a:link {
 }
 #page4 {
   background-image: url('images/plant3.jpg');
-  position: relative;
-  display: flex;
-  justify-content: center;
 }
 
 
@@ -171,8 +185,14 @@ a:link {
     opacity: 1;
   }
 }
-
-
+@keyframes growShrink {
+  0% {
+    -webkit-transform: scale(1.0);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+  }
+}
 
 
 /* HOVER COLOR */
